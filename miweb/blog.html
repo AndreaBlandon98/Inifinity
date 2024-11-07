@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE José Antonio Galán | Blog</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+      
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+      
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .blog-post {
+            border: 1px solid #353638;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .blog-post h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #353638;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>IE José Antonio Galán</h1>
+</header>
+
+<nav aria-label="Menú de navegación principal">
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="en-construccion.html">Contrátanos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="inicio">
+        <h2>Blog Institucional</h2>
+        <p>Bienvenidos a la sección de blog de IE José Antonio Galán. Aquí encontrarás las últimas noticias, actualizaciones y artículos de interés sobre nuestra institución.</p>
+    </section>
+
+    <section class="blog-post">
+        <h3>Nuevo Proyecto Educativo en 2024</h3>
+        <p><strong>Fecha:</strong> 1 de noviembre de 2024</p>
+        <p>Estamos emocionados de anunciar el lanzamiento de un nuevo proyecto educativo que busca integrar tecnología en el aula y mejorar la calidad de la educación que ofrecemos a nuestros estudiantes.</p>
+        <a href="#">Leer más...</a>
+    </section>
+
+    <section class="blog-post">
+        <h3>Actividades Extracurriculares de Otoño</h3>
+        <p><strong>Fecha:</strong> 15 de octubre de 2024</p>
+        <p>Durante este otoño, estamos organizando diversas actividades extracurriculares que incluyen deportes, arte y más. Anímate a participar y disfrutar con nosotros.</p>
+        <a href="#">Leer más...</a>
+    </section>
+
+    <section class="blog-post">
+        <h3>Reconocimiento a Nuestros Estudiantes</h3>
+        <p><strong>Fecha:</strong> 28 de septiembre de 2024</p>
+        <p>Nos enorgullece reconocer a nuestros estudiantes por sus logros en competiciones académicas y deportivas. Sus esfuerzos y dedicación son un ejemplo para todos.</p>
+        <a href="#">Leer más...</a>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; IE José Antonio Galán. Todos los derechos reservados.</p>
+</footer>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+
+    function showSlide(n) {
+        currentSlide = (n + slides.length) % slides.length;
+        const offset = -currentSlide * 100;
+        document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+    }
+
+    function changeSlide(n) {
+        showSlide(currentSlide + n);
+    }
+
+    // Inicializar el slider
+    showSlide(0);
+</script>
+</body>
+</html>

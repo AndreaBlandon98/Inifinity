@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IE José Antonio Galán | Proyectos</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<header>
+    <h1>IE José Antonio Galán</h1>
+    <h2>Proyectos Institucionales</h2>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="en-construccion.html">Contrátanos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section id="proyectos">
+        <h2>Nuestros Proyectos</h2>
+        <p>En IE José Antonio Galán estamos comprometidos con el desarrollo de proyectos educativos y sociales que impacten positivamente en nuestra comunidad. A continuación, te presentamos algunos de nuestros proyectos destacados:</p>
+
+        <article>
+            <h3>Proyecto de Tecnología Educativa</h3>
+            <p>Implementación de herramientas tecnológicas en las aulas para mejorar la experiencia de aprendizaje de nuestros estudiantes.</p>
+        </article>
+
+        <article>
+            <h3>Huerta Escolar</h3>
+            <p>Proyecto sostenible donde estudiantes y profesores trabajan juntos para cultivar alimentos y aprender sobre agricultura ecológica.</p>
+        </article>
+
+        <article>
+            <h3>Programa de Apoyo Psicológico</h3>
+            <p>Brindamos apoyo emocional y psicológico a nuestros estudiantes para fomentar su bienestar integral y fortalecer sus habilidades socioemocionales.</p>
+        </article>
+
+        
+    </section>
+</main>
+
+<footer>
+    <p>&copy; IE José Antonio Galán. Todos los derechos reservados.</p>
+</footer>
+<script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+
+    function showSlide(n) {
+        currentSlide = (n + slides.length) % slides.length;
+        const offset = -currentSlide * 100;
+        document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+    }
+
+    function changeSlide(n) {
+        showSlide(currentSlide + n);
+    }
+
+    // Inicializar el slider
+    showSlide(0);
+</script>
+</body>
+</html>

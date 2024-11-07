@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - IE José Antonio Galán</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        
+        .faq-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+
+        .faq-item h3 {
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        
+        .inquiry-form {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #f3f3f3;
+        }
+
+        .inquiry-form input, .inquiry-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .inquiry-form button {
+            background-color: #1575d5;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .inquiry-form button:hover {
+            background-color: #0d5db8;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>IE José Antonio Galán</h1>
+</header>
+
+
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="nosotros.html">Nosotros</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="en-contruccion.html">Contrátanos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li>
+    </ul>
+</nav>
+
+<main>
+    <section class="faq-section">
+        <h2>Preguntas Frecuentes (FAQ)</h2>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(0)">¿Cuáles son los requisitos de admisión?</h3>
+            <p class="faq-answer">Los requisitos incluyen completar el formulario de inscripción, presentar el historial académico y una entrevista con el equipo de admisión.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(1)">¿Qué programas extracurriculares ofrecen?</h3>
+            <p class="faq-answer">Ofrecemos una variedad de programas, incluyendo deportes, artes, robótica y club de ciencias.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(2)">¿Cuáles son los horarios de atención para padres?</h3>
+            <p class="faq-answer">Nuestro horario de atención es de lunes a viernes, de 8:00 a.m. a 4:00 p.m. en las oficinas administrativas.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3 onclick="toggleAnswer(3)">¿Cómo se maneja la disciplina en la institución?</h3>
+            <p class="faq-answer">Promovemos una cultura de respeto y responsabilidad mediante normas claras y una intervención positiva.</p>
+        </div>
+
+        <h3>¿Tienes alguna otra inquietud? Envíanos tu pregunta:</h3>
+        
+        <form action="enviar_inquietud.php" method="post" class="inquiry-form">
+            <label for="nombre">Nombre completo:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="pregunta">Tu pregunta:</label>
+            <textarea id="pregunta" name="pregunta" rows="4" required></textarea>
+
+            <button type="submit">Enviar pregunta</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 IE José Antonio Galán. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    function toggleAnswer(index) {
+        const answers = document.querySelectorAll('.faq-answer');
+        const answer = answers[index];
+        answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+    }
+
+    document.querySelectorAll('.faq-answer').forEach(answer => answer.style.display = 'none');
+
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider img');
+
+    function showSlide(n) {
+        currentSlide = (n + slides.length) % slides.length;
+        const offset = -currentSlide * 100;
+        document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+    }
+
+    function changeSlide(n) {
+        showSlide(currentSlide + n);
+    }
+
+    // Inicializar el slider
+    showSlide(0);
+</script>
+</body>
+</html>
+
+
